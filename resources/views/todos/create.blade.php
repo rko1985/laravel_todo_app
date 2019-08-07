@@ -14,6 +14,19 @@
 
                 <div class="card-body">
 
+                    @if($errors->any())
+                        
+                        <ul class="list-group">
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $error)
+                                    <li class="list-item">{{$error}}</li>
+                                @endforeach
+                            </div>
+                        </ul>
+                        
+
+                    @endif
+
                         <form method="POST" action="/store-todos">
 
                             @csrf
